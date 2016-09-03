@@ -17,7 +17,7 @@ mkdir build-ppu && cd build-ppu || { exit 1; }
 CFLAGS="-I$PS3DEV/host/ppu/include -DPIXMAN_NO_TLS" \
 LDFLAGS="-L$PS3DEV/host/ppu/lib -L$PSL1GHT/lib" \
 PKG_CONFIG_PATH="$PS3DEV/host/ppu/lib/pkgconfig" \
-../configure --prefix="$PS3DEV/host/ppu" --host="ppu" --disable-shared --disable-vmx || { exit 1; }
+../configure --prefix="$PS3DEV/host/ppu" --host="powerpc64-ps3-elf" --disable-shared --disable-vmx || { exit 1; }
 
 ## Compile and install.
 make -j4 && make install || { exit 1; }

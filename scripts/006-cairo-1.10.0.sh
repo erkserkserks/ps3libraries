@@ -17,7 +17,7 @@ mkdir build-ppu && cd build-ppu || { exit 1; }
 CFLAGS="-I$PS3DEV/host/ppu/include -DCAIRO_NO_MUTEX" \
 LDFLAGS="-L$PS3DEV/host/ppu/lib -L$PSL1GHT/lib" \
 PKG_CONFIG_PATH="$PS3DEV/host/ppu/lib/pkgconfig" \
-../configure --prefix="$PS3DEV/host/ppu" --host="ppu" --enable-fc="no" --enable-xlib="no" --disable-shared --disable-valgrind --enable-gobject="no" || { exit 1; }
+../configure --prefix="$PS3DEV/host/ppu" --host="powerpc64-ps3-elf" --enable-fc="no" --enable-xlib="no" --disable-shared --disable-valgrind --enable-gobject="no" || { exit 1; }
 
 ## Compile and install.
 make -j4 && make install || { exit 1; }
