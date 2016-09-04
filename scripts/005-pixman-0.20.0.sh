@@ -1,14 +1,14 @@
 #!/bin/sh
-# pixman-0.20.0.sh by Dan Peori (danpeori@oopo.net)
+# pixman-0.32.8.sh by Dan Peori (danpeori@oopo.net)
 
 ## Download the source code.
-wget --continue http://cairographics.org/releases/pixman-0.20.0.tar.gz || { exit 1; }
+wget --continue http://cairographics.org/releases/pixman-0.32.8.tar.gz || { exit 1; }
 
 ## Unpack the source code.
-rm -Rf pixman-0.20.0 && tar xfvz pixman-0.20.0.tar.gz && cd pixman-0.20.0 || { exit 1; }
+rm -Rf pixman-0.32.8 && tar xfvz pixman-0.32.8.tar.gz && cd pixman-0.32.8 || { exit 1; }
 
 ## Patch the source code.
-cat ../../patches/pixman-0.20.0-PPU.patch | patch -p1 || { exit 1; }
+cat ../../patches/pixman-0.32.8-PPU.patch | patch -p1 || { exit 1; }
 
 ## Create the build directory.
 mkdir build-ppu && cd build-ppu || { exit 1; }
